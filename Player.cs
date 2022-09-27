@@ -2,7 +2,7 @@ using System;
 
 namespace ShootingDice
 {
-    public class Player
+    public class Player //base class or parent class
     {
         public string Name { get; set; }
         public int DiceSize { get; set; } = 6;
@@ -13,9 +13,10 @@ namespace ShootingDice
             return new Random().Next(DiceSize) + 1;
         }
 
-        public virtual void Play(Player other)
+        public virtual void Play(Player other) //method for playing the game
         {
             // Call roll for "this" object and for the "other" object
+            
             int myRoll = Roll();
             int otherRoll = other.Roll();
 
